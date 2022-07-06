@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="justify-content-center align-items-center d-flex my-5">
+    <img src="https://loremflickr.com/120/120/<%= @restaurant.name %>" class="rounded-circle" alt="...">
+    <h1><%= @restaurant.name %></h1>
+  </div>
+  <p class="card-text">Address: <%= @restaurant.address %></p>
+  <p class="card-text">Cuisine: <%= @restaurant.category %></p>
+  <p class="card-text">Phone Number: <%= @restaurant.phone_number %></p>
+
+  <br>
+  <h2>Reviews</h2>
+  <% @restaurant.reviews.each do |review| %>
+    <p><%= review.rating %> </p><i class="fas fa-star"></i>
+
+
+    <p><%= review.content %></p>
+    <hr>
+  <% end %>
+
+  <%= link_to 'Write a review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  <%= link_to 'Back', restaurants_path, class: "btn btn-primary" %>
+</div>

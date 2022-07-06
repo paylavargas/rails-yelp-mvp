@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="my-5 text-center">Add a new restaurant</h1>
+  <div class="row justify-content-center my-5">
+    <div class="col-6">
+    <%= simple_form_for @restaurant do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category, collection: Restaurant::CUISINE %>
+      <%= f.button :submit, class: "btn-primary" %>
+      <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+    <% end %>
+    </div>
+  </div>
+  </h1>
+</div>

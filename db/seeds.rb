@@ -13,11 +13,11 @@ puts "The database is now clean."
 
 puts "Create 40 restaurants"
 
-40.times do
+5.times do
   Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_name,
     phone_number: Faker::PhoneNumber.cell_phone,
-    category: Faker::Restaurant.type
+    category: ["chinese", "italian", "japanese", "french", "belgian"].sample
   )
 end
