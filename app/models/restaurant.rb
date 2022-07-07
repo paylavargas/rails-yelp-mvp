@@ -1,7 +1,7 @@
 class Restaurant < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
-  CUISINE = %w[Chinese Italian Japanese French Belgian]
+  CUISINE = %w[chinese italian japanese french belgian]
 
   validates :name, presence: true
   validates :address, presence: true

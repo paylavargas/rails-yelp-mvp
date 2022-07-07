@@ -1,8 +1,10 @@
-<div class="container">
-  <div class="justify-content-center align-items-center d-flex my-5">
-    <img src="https://loremflickr.com/120/120/<%= @restaurant.name %>" class="rounded-circle" alt="...">
+<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media-cdn.tripadvisor.com/media/photo-s/15/32/44/43/flat-lay-goals.jpg);">
+  <div class="container">
     <h1><%= @restaurant.name %></h1>
   </div>
+</div>
+
+<div class="container">
   <p class="card-text">Address: <%= @restaurant.address %></p>
   <p class="card-text">Cuisine: <%= @restaurant.category %></p>
   <p class="card-text">Phone Number: <%= @restaurant.phone_number %></p>
@@ -10,7 +12,7 @@
   <br>
   <h2>Reviews</h2>
   <% @restaurant.reviews.each do |review| %>
-    <p><%= review.rating %> </p><i class="fas fa-star"></i>
+    <p><%= review.rating %></p>
 
 
     <p><%= review.content %></p>
