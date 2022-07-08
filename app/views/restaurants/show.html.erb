@@ -5,9 +5,9 @@
 </div>
 
 <div class="container">
-  <p class="card-text">Address: <%= @restaurant.address %></p>
-  <p class="card-text">Cuisine: <%= @restaurant.category %></p>
-  <p class="card-text">Phone Number: <%= @restaurant.phone_number %></p>
+  <p class="card-text"><strong>Address: </strong><%= @restaurant.address %></p>
+  <p class="card-text"><strong>Cuisine: </strong><%= @restaurant.category.capitalize %></p>
+  <p class="card-text"><strong>Phone Number: </strong><%= @restaurant.phone_number %></p>
 
   <br>
   <h2>Reviews</h2>
@@ -19,6 +19,6 @@
     <hr>
   <% end %>
 
-  <%= link_to 'Write a review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
-  <%= link_to 'Back', restaurants_path, class: "btn btn-primary" %>
+  <%= render "reviews/new_form", review: @review %>
+
 </div>
